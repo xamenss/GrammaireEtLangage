@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include "etat.h"
 #include "symbole.h"
 #include "automate.h"
 using namespace std;

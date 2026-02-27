@@ -38,6 +38,7 @@ bool Automate::analyse() {
     while (!finnn && !erreur) {
         finnn = statestack.top()->transition(*this, lexer->Consulter());
     }
+    return false;
 }
 
 Symbole * Automate::popSymbol() {
