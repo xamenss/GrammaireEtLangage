@@ -6,13 +6,13 @@
 using namespace std;
 
 
-
-class Etat1 : public Etat {
+class Etat {
    public:
-   Etat1(string name);
-   virtual ~Etat1();
+   Etat(string name);
+   Etat();
+   virtual ~Etat();
    void print() const;
-   bool transition(Automate & automate, Symbole * s);
+   virtual bool transition(Automate & automate, Symbole * s) = 0;
    protected:
    string name;
 };

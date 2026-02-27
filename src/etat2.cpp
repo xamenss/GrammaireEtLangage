@@ -1,4 +1,5 @@
 #include "etat1.h"
+#include "etat2.h"
 #include "etat.h"
 #include "symbole.h"
 #include "automate.h"
@@ -8,19 +9,19 @@
 
 // const string Etiquettes[] = { "OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT", "FIN", "ERREUR" };
 
-Etat1::Etat1(string name) : name(name) {
+Etat2::Etat2(string name) : name(name) {
 }
 
 bool Etat1::transition(Automate & automate, Symbole * s) {
    switch (*s){
-   case PLUS:
-      automate.decalage(s, new Etat4);
+   case INT:
+      automate.decalage(s, new Etat3);
       break;
-   case MULT:
-      automate.decalage(s, new Etat5);
+   case OPENPAR:
+      automate.decalage(s, new Etat2);
       break;
-   case FIN:
-      automate.decalage(s, new Etat10);
+   case ERREUR:
+      //automate.decalage(s, new Etat6);
       break;
    case default:
       cout<<"Erreur de syntaxe"<<endl;

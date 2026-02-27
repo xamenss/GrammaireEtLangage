@@ -1,6 +1,9 @@
 #pragma once
 
-#include <string>
+#include "symbole.h"
+#include "etat.h"
+#include <iostream>
+
 using namespace std;
 
 enum Identificateurs { OPENPAR, CLOSEPAR, PLUS, MULT, INT, FIN, ERREUR };
@@ -12,7 +15,7 @@ class Automate {
       Automate() {  }
       virtual ~Automate() { }
       operator int() const { return ; }
-      virtual void decalage(Symbole * s, Etat1 * e);
+      virtual void decalage(Symbole * s, Etat * e);
 
    protected:
 };
