@@ -22,7 +22,7 @@ Etat9::Etat9(string name) : name(name) {
 
 bool Etat9::transition(Automate & automate, Symbole * s) {
    switch (*s){
-   case PLUS:
+   case PLUS: {
       automate.popAndDestroySymbol();
       Expr * s1 = (Expr*) automate.popSymbol();
       Symbole * s2 = automate.popAndDestroySymbol();
@@ -41,7 +41,8 @@ bool Etat9::transition(Automate & automate, Symbole * s) {
       Expr * s4 = new Expr(valeur);
       automate.reduction(5, s4);
       break;
-   case MULT:
+   }
+   case MULT: {
       automate.popAndDestroySymbol();
       Expr * s1 = (Expr*) automate.popSymbol();
       Symbole * s2 = automate.popAndDestroySymbol();
@@ -60,7 +61,8 @@ bool Etat9::transition(Automate & automate, Symbole * s) {
       Expr * s4 = new Expr(valeur);
       automate.reduction(5, s4);
       break;
-   case CLOSEPAR:
+   }
+   case CLOSEPAR: {
       automate.popAndDestroySymbol();
       Symbole * s1 = automate.popSymbol();
       if (s1->getEtiquette() == "EXPR") {
@@ -93,9 +95,9 @@ bool Etat9::transition(Automate & automate, Symbole * s) {
          automate.erreur_();
          return false;
       }
-      
       break;
-   case FIN:
+   }
+   case FIN: {
       automate.popAndDestroySymbol();
       Expr * s1 = (Expr*) automate.popSymbol();
       Symbole * s2 = automate.popAndDestroySymbol();
@@ -114,10 +116,12 @@ bool Etat9::transition(Automate & automate, Symbole * s) {
       Expr * s4 = new Expr(valeur);
       automate.reduction(5, s4);
       break;
-   default:
+   }
+   default: {
       cout<<"Erreur de syntaxe"<<endl;
       automate.erreur_();
       break;
+   }
    }
    return false;
 }

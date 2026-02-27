@@ -2,8 +2,8 @@
 
 #include <string>
 #include "etat.h"
-#include "symbole.h"
-#include "automate.h"
+class Automate;
+class Symbole;
 using namespace std;
 
 

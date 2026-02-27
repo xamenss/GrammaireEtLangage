@@ -22,30 +22,35 @@ Etat3::Etat3(string name) : name(name) {
 
 bool Etat3::transition(Automate & automate, Symbole * s) {
    switch (*s){
-   case PLUS:
+   case PLUS: {
       Symbole * s1 =  automate.popSymbol();
       int valeur =((Entier*) s1)->getValeur();
       automate.reduction(1, s1);
       break;
-   case MULT:
+   }
+   case MULT: {
       Symbole * s1 =  automate.popSymbol();
       int valeur =((Entier*) s1)->getValeur();
       automate.reduction(1, s1);
       break;
-   case CLOSEPAR:
+   }
+   case CLOSEPAR: {
       Symbole * s1 =  automate.popSymbol();
       int valeur =((Entier*) s1)->getValeur();
       automate.reduction(1, s1);
       break;
-   case FIN:
+   }
+   case FIN: {
       Symbole * s1 =  automate.popSymbol();
       int valeur =((Entier*) s1)->getValeur();
       automate.reduction(1, s1);
       break;
-   default:
+   }
+   default: {
       cout<<"Erreur de syntaxe"<<endl;
       automate.erreur_();
       break;
+   }
    }
    return false;
 }
