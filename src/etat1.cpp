@@ -30,6 +30,7 @@ bool Etat1::transition(Automate & automate, Symbole * s) {
       break;
    case FIN:
       automate.fin_();
+      return true;
       break;
    default:
       cout<<"Erreur de syntaxe"<<endl;
