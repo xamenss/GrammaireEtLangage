@@ -5,5 +5,5 @@ class expr : public symbole {
     public:
         expr() : symbole(expr) {};
         virtual ~expr() {};
-        virtual double eval(const map<string, double>& valeurs) = 0; 
+        virtual double eval() const = 0; 
 }

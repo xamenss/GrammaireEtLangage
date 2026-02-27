@@ -16,6 +16,7 @@ class Automate {
       virtual ~Automate() { }
       operator int() const { return ; }
       virtual void decalage(Symbole * s, Etat * e);
+      virtual void reduction(int n, Symbole * s);
 
    protected:
 };
