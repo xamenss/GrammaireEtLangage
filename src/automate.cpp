@@ -34,9 +34,9 @@ void Automate::erreur_() {
 
 
 bool Automate::analyse() {
-    bool fin = false;
-    while (!fin) {
-        fin = statestack.top()->transition(*this, lexer->Consulter());
+    bool finnn = false;
+    while (!finnn && !erreur) {
+        finnn = statestack.top()->transition(*this, lexer->Consulter());
     }
 }
 
