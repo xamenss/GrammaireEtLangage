@@ -17,22 +17,22 @@
 
 // const string Etiquettes[] = { "OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT", "FIN", "ERREUR" };
 
-Etat8::Etat8(string name) : name(name) {
+Etat3::Etat3(string name) : name(name) {
 }
 
-bool Etat8::transition(Automate & automate, Symbole * s) {
+bool Etat3::transition(Automate & automate, Symbole * s) {
    switch (*s){
    case PLUS:
-      automate.reduction(3, s);
+      automate.reduction(s, new Etat5);
       break;
    case MULT:
-      automate.reduction(3, s);
+      automate.reduction(s, new Etat5);
       break;
    case CLOSEPAR:
-      automate.reduction(3, s);
+      automate.reduction(s, new Etat5);
       break;
    case FIN:
-      automate.reduction(3, s);
+      automate.reduction(s, new Etat5);
       break;
    default:
       cout<<"Erreur de syntaxe"<<endl;

@@ -1,4 +1,13 @@
+#include "etat0.h"
 #include "etat1.h"
+#include "etat2.h"
+#include "etat3.h"
+#include "etat4.h"
+#include "etat5.h"
+#include "etat6.h"
+#include "etat7.h"
+#include "etat8.h"
+#include "etat9.h"
 #include "etat.h"
 #include "symbole.h"
 #include "automate.h"
@@ -20,9 +29,9 @@ bool Etat1::transition(Automate & automate, Symbole * s) {
       automate.decalage(s, new Etat5);
       break;
    case FIN:
-      automate.decalage(s, new Etat10);
+      //automate.decalage(s, new Etat10);
       break;
-   case default:
+   default:
       cout<<"Erreur de syntaxe"<<endl;
       break;
    }

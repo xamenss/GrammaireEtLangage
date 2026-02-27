@@ -7,11 +7,11 @@ using namespace std;
 
 
 
-class Etat1 : public Etat {
+class Etat4 : public Etat {
    public:
-   Etat1(string name);
-   Etat1();
-   virtual ~Etat1();
+   Etat4(string name);
+   Etat4();
+   virtual ~Etat4();
    void print() const;
    bool transition(Automate & automate, Symbole * s);
    protected:

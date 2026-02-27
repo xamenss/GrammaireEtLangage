@@ -1,6 +1,12 @@
+#include "etat0.h"
 #include "etat1.h"
 #include "etat2.h"
 #include "etat3.h"
+#include "etat4.h"
+#include "etat5.h"
+#include "etat6.h"
+#include "etat7.h"
+#include "etat8.h"
 #include "etat9.h"
 
 
