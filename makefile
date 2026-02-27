@@ -1,12 +1,10 @@
-#todolist : verifier si les dir existent et sinon les créer et 
-
 #Variable:
 
 #compilateur
 CXX = g++
 
 #Option de compilation
-CXXFLAGS = -ansi -pedantic -Wall -std=c++17   -I$(INCLUDE_DIR)
+CXXFLAGS = -ansi -pedantic -Wall -std=c++17 -I$(INCLUDE_DIR)
 
 #nom de l'executable
 TARGET = grammaireEtLangage
@@ -34,18 +32,18 @@ $(TARGET): $(OBJECTS)
 	$(CXX) $(OBJECTS) -o $(TARGET)
 
 #régple pour compiler de cpp à .o
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+#créer le dossier out s'il n'existe pas
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 #regle executé lorsque qu'on appelle le makefile  
 all: $(TARGET)
 
 #nettoie le fichier executable et les .o
 clean:
-	rm -f $(OBJ_DIR)/*.o $(TARGET)
-
-
-
-
+	rm -rf $(OBJ_DIR) $(TARGET)
 
 .PHONY: clean all
