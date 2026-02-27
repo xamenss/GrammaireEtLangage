@@ -20,6 +20,41 @@
 Etat3::Etat3(string name) : name(name) {
 }
 
+<<<<<<< HEAD
+bool Etat3::transition(Automate & automate, Symbole * s) {
+   switch (*s){
+   case PLUS: {
+      Symbole * s1 =  automate.popSymbol();
+      int valeur =((Entier*) s1)->getValeur();
+      automate.reduction(1, s1);
+      break;
+   }
+   case MULT: {
+      Symbole * s1 =  automate.popSymbol();
+      int valeur =((Entier*) s1)->getValeur();
+      automate.reduction(1, s1);
+      break;
+   }
+   case CLOSEPAR: {
+      Symbole * s1 =  automate.popSymbol();
+      int valeur =((Entier*) s1)->getValeur();
+      automate.reduction(1, s1);
+      break;
+   }
+   case FIN: {
+      Symbole * s1 =  automate.popSymbol();
+      int valeur =((Entier*) s1)->getValeur();
+      automate.reduction(1, s1);
+      break;
+   }
+   default: {
+      cout<<"Erreur de syntaxe"<<endl;
+      automate.erreur_();
+      break;
+   }
+   }
+   return false;
+=======
 bool Etat3::transition(Automate& automate, Symbole* s) {
     switch (*s) {
     case PLUS:
@@ -35,4 +70,5 @@ bool Etat3::transition(Automate& automate, Symbole* s) {
         automate.erreur_();
         return false;
     }
+>>>>>>> a572cad5cfd5855de35f0e4c5047021f5bf95257
 }

@@ -22,7 +22,7 @@ Etat8::Etat8(string name) : name(name) {
 
 bool Etat8::transition(Automate & automate, Symbole * s) {
    switch (*s){
-   case PLUS:
+   case PLUS: {
       Expr * s1 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
       Expr * s2 = (Expr*) automate.popSymbol();
@@ -30,7 +30,8 @@ bool Etat8::transition(Automate & automate, Symbole * s) {
       Expr * s3 = new Expr(valeur);
       automate.reduction(3, s3);
       break;
-   case MULT:
+   }
+   case MULT: {
       Expr * s1 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
       Expr * s2 = (Expr*) automate.popSymbol();
@@ -38,7 +39,8 @@ bool Etat8::transition(Automate & automate, Symbole * s) {
       Expr * s3 = new Expr(valeur);
       automate.reduction(3, s3);
       break;
-   case CLOSEPAR:
+   }
+   case CLOSEPAR: {
       Expr * s1 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
       Expr * s2 = (Expr*) automate.popSymbol();
@@ -46,7 +48,8 @@ bool Etat8::transition(Automate & automate, Symbole * s) {
       Expr * s3 = new Expr(valeur);
       automate.reduction(3, s3);
       break;
-   case FIN:
+   }
+   case FIN: {
       Expr * s1 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
       Expr * s2 = (Expr*) automate.popSymbol();
@@ -54,10 +57,12 @@ bool Etat8::transition(Automate & automate, Symbole * s) {
       Expr * s3 = new Expr(valeur);
       automate.reduction(3, s3);
       break;
-   default:
+   }
+   default: {
       cout<<"Erreur de syntaxe"<<endl;
       automate.erreur_();
       break;
+   }
    }
    return false;
 }

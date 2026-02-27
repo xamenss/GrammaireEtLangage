@@ -22,20 +22,24 @@ Etat1::Etat1(string name) : name(name) {
 
 bool Etat1::transition(Automate & automate, Symbole * s) {
    switch (*s){
-   case PLUS:
+   case PLUS: {
       automate.decalage(s, new Etat4);
       break;
-   case MULT:
+   }
+   case MULT: {
       automate.decalage(s, new Etat5);
       break;
-   case FIN:
+   }
+   case FIN: {
       automate.fin_();
       return true;
       break;
-   default:
+   }
+   default: {
       cout<<"Erreur de syntaxe"<<endl;
       automate.erreur_();
       break;
+   }
    }
    return false;
 }

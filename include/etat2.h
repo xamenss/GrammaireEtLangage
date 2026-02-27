@@ -1,11 +1,11 @@
 #pragma once
 
-#include <string>
-#include "etat.h"
 
+#include <string>
+#include "symbole.h"
+#include "automate.h"
 using namespace std;
-class Automate;
-class Symbole;
+
 
 
 class Etat2 : public Etat {
