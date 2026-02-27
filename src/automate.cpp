@@ -24,8 +24,18 @@ void Automate::reduction(int n, Symbole* s) {
     statestack.top()->transition(*this, s);
 }
 
+void Automate::fin_() {
+    fin = true;
+}
+
+void Automate::erreur_() {
+    erreur = true;
+}
+
+
 bool Automate::analyse() {
-    while (true) {
-        statestack.top()->transition(*this, lexer->Consulter());
+    bool fin = false;
+    while (!fin) {
+        fin = statestack.top()->transition(*this, lexer->Consulter());
     }
 }

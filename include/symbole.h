@@ -13,6 +13,7 @@ class Symbole {
       virtual ~Symbole() { }
       operator int() const { return ident; }
       virtual void Affiche();
+      string getEtiquette() const { return Etiquettes[ident]; }
 
    protected:
       int ident;

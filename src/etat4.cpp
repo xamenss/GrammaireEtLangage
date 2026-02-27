@@ -33,6 +33,7 @@ bool Etat4::transition(Automate & automate, Symbole * s) {
       break;
    default:
       cout<<"Erreur de syntaxe"<<endl;
+      automate.erreur_();
       break;
    }
    return false;

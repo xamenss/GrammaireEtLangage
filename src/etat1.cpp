@@ -29,10 +29,11 @@ bool Etat1::transition(Automate & automate, Symbole * s) {
       automate.decalage(s, new Etat5);
       break;
    case FIN:
-      //automate.decalage(s, new Etat10);
+      automate.fin_();
       break;
    default:
       cout<<"Erreur de syntaxe"<<endl;
+      automate.erreur_();
       break;
    }
    return false;
