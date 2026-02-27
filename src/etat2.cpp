@@ -17,8 +17,8 @@
 
 // const string Etiquettes[] = { "OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT", "FIN", "EXPR" };
 
-Etat2::Etat2(string name) : name(name) {
-}
+// Etat2::Etat2(string name) : name(name) {
+// }
 
 bool Etat2::transition(Automate & automate, Symbole * s) {
    switch (*s){

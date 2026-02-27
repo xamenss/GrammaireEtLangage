@@ -17,8 +17,8 @@
 
 // const string Etiquettes[] = { "OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT", "FIN", "EXPR" };
 
-Etat0::Etat0(string name) : name(name) {
-}
+// Etat0::Etat0(string name) : name(name) {
+// }
 
 bool Etat0::transition(Automate & automate, Symbole * s) {
    switch (*s){
@@ -41,4 +41,8 @@ bool Etat0::transition(Automate & automate, Symbole * s) {
    }
    }
    return false;
+}
+
+void Etat0::print() const {
+   cout<<"Etat 0"<<endl;
 }
