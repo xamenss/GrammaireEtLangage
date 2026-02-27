@@ -23,23 +23,23 @@ Etat3::Etat3(string name) : name(name) {
 bool Etat3::transition(Automate & automate, Symbole * s) {
    switch (*s){
    case PLUS:
-      Expr * s1 = (Expr*) automate.popSymbol();
-      int valeur = s1->getValeur();
+      Symbole * s1 =  automate.popSymbol();
+      int valeur =((Entier*) s1)->getValeur();
       automate.reduction(1, s1);
       break;
    case MULT:
-      Expr * s1 = (Expr*) automate.popSymbol();
-      int valeur = s1->getValeur();
+      Symbole * s1 =  automate.popSymbol();
+      int valeur =((Entier*) s1)->getValeur();
       automate.reduction(1, s1);
       break;
    case CLOSEPAR:
-      Expr * s1 = (Expr*) automate.popSymbol();
-      int valeur = s1->getValeur();
+      Symbole * s1 =  automate.popSymbol();
+      int valeur =((Entier*) s1)->getValeur();
       automate.reduction(1, s1);
       break;
    case FIN:
-      Expr * s1 = (Expr*) automate.popSymbol();
-      int valeur = s1->getValeur();
+      Symbole * s1 =  automate.popSymbol();
+      int valeur =((Entier*) s1)->getValeur();
       automate.reduction(1, s1);
       break;
    default:
