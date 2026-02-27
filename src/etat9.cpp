@@ -23,16 +23,80 @@ Etat9::Etat9(string name) : name(name) {
 bool Etat9::transition(Automate & automate, Symbole * s) {
    switch (*s){
    case PLUS:
-      automate.reduction(4, s);
+      automate.popAndDestroySymbol();
+      Expr * s1 = (Expr*) automate.popSymbol();
+      Symbole * s2 = automate.popAndDestroySymbol();
+      Expr * s3 = (Expr*) automate.popSymbol();
+      automate.popAndDestroySymbol();
+      int valeur;
+      if (s2->getEtiquette() == "PLUS") {
+         valeur = s1->getValeur() + s3->getValeur();
+      } else if (s2->getEtiquette() == "MULT") {
+         valeur = s1->getValeur() * s3->getValeur();
+      } else {
+         cout<<"Erreur de syntaxe"<<endl;
+         automate.erreur_();
+         return false;
+      }
+      Expr * s4 = new Expr(valeur);
+      automate.reduction(5, s4);
       break;
    case MULT:
-      automate.reduction(4, s);
+      automate.popAndDestroySymbol();
+      Expr * s1 = (Expr*) automate.popSymbol();
+      Symbole * s2 = automate.popAndDestroySymbol();
+      Expr * s3 = (Expr*) automate.popSymbol();
+      automate.popAndDestroySymbol();
+      int valeur;
+      if (s2->getEtiquette() == "PLUS") {
+         valeur = s1->getValeur() + s3->getValeur();
+      } else if (s2->getEtiquette() == "MULT") {
+         valeur = s1->getValeur() * s3->getValeur();
+      } else {
+         cout<<"Erreur de syntaxe"<<endl;
+         automate.erreur_();
+         return false;
+      }
+      Expr * s4 = new Expr(valeur);
+      automate.reduction(5, s4);
       break;
    case CLOSEPAR:
-      automate.reduction(4, s);
+      automate.popAndDestroySymbol();
+      Expr * s1 = (Expr*) automate.popSymbol();
+      Symbole * s2 = automate.popAndDestroySymbol();
+      Expr * s3 = (Expr*) automate.popSymbol();
+      automate.popAndDestroySymbol();
+      int valeur;
+      if (s2->getEtiquette() == "PLUS") {
+         valeur = s1->getValeur() + s3->getValeur();
+      } else if (s2->getEtiquette() == "MULT") {
+         valeur = s1->getValeur() * s3->getValeur();
+      } else {
+         cout<<"Erreur de syntaxe"<<endl;
+         automate.erreur_();
+         return false;
+      }
+      Expr * s4 = new Expr(valeur);
+      automate.reduction(5, s4);
       break;
    case FIN:
-      automate.reduction(4, s);
+      automate.popAndDestroySymbol();
+      Expr * s1 = (Expr*) automate.popSymbol();
+      Symbole * s2 = automate.popAndDestroySymbol();
+      Expr * s3 = (Expr*) automate.popSymbol();
+      automate.popAndDestroySymbol();
+      int valeur;
+      if (s2->getEtiquette() == "PLUS") {
+         valeur = s1->getValeur() + s3->getValeur();
+      } else if (s2->getEtiquette() == "MULT") {
+         valeur = s1->getValeur() * s3->getValeur();
+      } else {
+         cout<<"Erreur de syntaxe"<<endl;
+         automate.erreur_();
+         return false;
+      }
+      Expr * s4 = new Expr(valeur);
+      automate.reduction(5, s4);
       break;
    default:
       cout<<"Erreur de syntaxe"<<endl;

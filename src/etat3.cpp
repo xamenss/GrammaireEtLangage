@@ -45,9 +45,9 @@ bool Etat3::transition(Automate & automate, Symbole * s) {
       Expr * s3 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
       int valeur;
-      if (s2->getEtiquette() == PLUS) {
+      if (s2->getEtiquette() == "PLUS") {
          valeur = s1->getValeur() + s3->getValeur();
-      } else if (s2->getEtiquette() == MULT) {
+      } else if (s2->getEtiquette() == "MULT") {
          valeur = s1->getValeur() * s3->getValeur();
       } else {
          cout<<"Erreur de syntaxe"<<endl;

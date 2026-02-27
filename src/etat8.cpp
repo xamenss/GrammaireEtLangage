@@ -23,16 +23,36 @@ Etat8::Etat8(string name) : name(name) {
 bool Etat8::transition(Automate & automate, Symbole * s) {
    switch (*s){
    case PLUS:
-      automate.reduction(3, s);
+      Expr * s1 = (Expr*) automate.popSymbol();
+      automate.popAndDestroySymbol();
+      Expr * s2 = (Expr*) automate.popSymbol();
+      int valeur = s1->getValeur() * s2->getValeur();
+      Expr * s3 = new Expr(valeur);
+      automate.reduction(3, s3);
       break;
    case MULT:
-      automate.reduction(3, s);
+      Expr * s1 = (Expr*) automate.popSymbol();
+      automate.popAndDestroySymbol();
+      Expr * s2 = (Expr*) automate.popSymbol();
+      int valeur = s1->getValeur() * s2->getValeur();
+      Expr * s3 = new Expr(valeur);
+      automate.reduction(3, s3);
       break;
    case CLOSEPAR:
-      automate.reduction(3, s);
+      Expr * s1 = (Expr*) automate.popSymbol();
+      automate.popAndDestroySymbol();
+      Expr * s2 = (Expr*) automate.popSymbol();
+      int valeur = s1->getValeur() * s2->getValeur();
+      Expr * s3 = new Expr(valeur);
+      automate.reduction(3, s3);
       break;
    case FIN:
-      automate.reduction(3, s);
+      Expr * s1 = (Expr*) automate.popSymbol();
+      automate.popAndDestroySymbol();
+      Expr * s2 = (Expr*) automate.popSymbol();
+      int valeur = s1->getValeur() * s2->getValeur();
+      Expr * s3 = new Expr(valeur);
+      automate.reduction(3, s3);
       break;
    default:
       cout<<"Erreur de syntaxe"<<endl;
