@@ -12,9 +12,11 @@ class Lexer;
 
 class Automate {
 public:
+    Automate(Lexer* l) : lexer(l) {}
     void decalage(Symbole* s, Etat* e);
     void transitionsimple(Symbole* s, Etat* e);
     void reduction(int n, Symbole* s);
+    bool analyse();
 
 private:
     std::stack<Symbole*> symbolstack;

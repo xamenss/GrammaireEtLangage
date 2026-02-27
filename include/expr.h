@@ -1,9 +1,10 @@
-#include <map>
-#include <string>
-#inlclude "symbole.h"
-class expr : public symbole {
+
+#include "symbole.h"
+
+
+class Expr : public Symbole {
     public:
-        expr() : symbole(expr) {};
-        virtual ~expr() {};
-        virtual double eval(const map<string, double>& valeurs) = 0; 
-}
+        Expr() : Symbole(EXPR) {};
+        virtual ~Expr() {};
+        virtual double eval() = 0; 
+};

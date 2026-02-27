@@ -28,8 +28,8 @@ bool Etat0::transition(Automate & automate, Symbole * s) {
    case OPENPAR:
       automate.decalage(s, new Etat2);
       break;
-   case ERREUR:
-      //automate.decalage(s, new Etat6);
+   case EXPR:
+      automate.transitionsimple(s, new Etat1);
       break;
    default:
       cout<<"Erreur de syntaxe"<<endl;

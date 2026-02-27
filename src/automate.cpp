@@ -24,3 +24,8 @@ void Automate::reduction(int n, Symbole* s) {
     statestack.top()->transition(*this, s);
 }
 
+bool Automate::analyse() {
+    while (true) {
+        statestack.top()->transition(*this, lexer->Consulter());
+    }
+}
