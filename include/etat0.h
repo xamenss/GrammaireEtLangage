@@ -2,10 +2,11 @@
 
 #include <string>
 #include "etat.h"
-#include "symbole.h"
-#include "automate.h"
-using namespace std;
 
+
+using namespace std;
+class Automate;
+class Symbole;
 
 
 class Etat0 : public Etat {
