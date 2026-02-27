@@ -23,6 +23,7 @@ Etat7::Etat7(string name) : name(name) {
 bool Etat7::transition(Automate & automate, Symbole * s) {
    switch (*s){
    case PLUS:
+   {
       Expr * s1 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
       Expr * s2 = (Expr*) automate.popSymbol();
@@ -30,10 +31,12 @@ bool Etat7::transition(Automate & automate, Symbole * s) {
       Expr * s3 = new Expr(valeur);
       automate.reduction(3, s3);
       break;
+   }
    case MULT:
-      automate.decalage(s, new Etat5);
-      break;
+      {automate.decalage(s, new Etat5);
+      break;}
    case CLOSEPAR:
+   {
       Expr * s1 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
       Expr * s2 = (Expr*) automate.popSymbol();
@@ -41,7 +44,9 @@ bool Etat7::transition(Automate & automate, Symbole * s) {
       Expr * s3 = new Expr(valeur);
       automate.reduction(3, s3);
       break;
+   }
    case FIN:
+   {
       Expr * s1 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
       Expr * s2 = (Expr*) automate.popSymbol();
@@ -49,10 +54,13 @@ bool Etat7::transition(Automate & automate, Symbole * s) {
       Expr * s3 = new Expr(valeur);
       automate.reduction(3, s3);
       break;
+   }
    default:
+   {
       cout<<"Erreur de syntaxe"<<endl;
       automate.erreur_();
       break;
+   }
    }
    return false;
 }
