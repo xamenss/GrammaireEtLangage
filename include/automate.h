@@ -14,6 +14,7 @@
 #include "symbole.h"
 #include "etat.h"
 #include <iostream>
+#include "expr.h"
 
 #include <stack>
 
@@ -30,6 +31,10 @@ Automate(Lexer* l) : lexer(l) {statestack.push(new Etat0);}
     void fin_();
     void erreur_();
     bool analyse();
+    Symbole* popSymbol();
+    Symbole * popAndDestroySymbol();
+
+    
 
 private:
     std::stack<Symbole*> symbolstack;
