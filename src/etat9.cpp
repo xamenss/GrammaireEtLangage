@@ -41,7 +41,6 @@ bool Etat9::transition(Automate & automate, Symbole * s) {
       break;
    }
    case CLOSEPAR: {
-      int valeur;
       automate.popAndDestroySymbol();
       Expr * s1 = (Expr*) automate.popSymbol();
       automate.popAndDestroySymbol();
