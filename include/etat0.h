@@ -11,8 +11,7 @@ class Symbole;
 class Etat0 : public Etat {
    public:
    Etat0(string name);
-   Etat0();
-   virtual ~Etat0();
+   Etat0(){};
    void print() const;
    bool transition(Automate & automate, Symbole * s);
    protected:

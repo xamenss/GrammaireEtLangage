@@ -20,7 +20,6 @@
 Etat3::Etat3(string name) : name(name) {
 }
 
-<<<<<<< HEAD
 bool Etat3::transition(Automate & automate, Symbole * s) {
    switch (*s){
    case PLUS: {
@@ -54,21 +53,4 @@ bool Etat3::transition(Automate & automate, Symbole * s) {
    }
    }
    return false;
-=======
-bool Etat3::transition(Automate& automate, Symbole* s) {
-    switch (*s) {
-    case PLUS:
-    case MULT:
-    case CLOSEPAR:
-    case FIN: {
-        Symbole* s1 = automate.popSymbol();
-        automate.reduction(1, s1);
-        return false;
-    }
-    default:
-        std::cout << "Erreur de syntaxe" << std::endl;
-        automate.erreur_();
-        return false;
-    }
->>>>>>> a572cad5cfd5855de35f0e4c5047021f5bf95257
 }
