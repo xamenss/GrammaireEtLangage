@@ -1,23 +1,23 @@
 #pragma once
-
+#include "lexer.h"
 #include "symbole.h"
 #include "etat.h"
 #include <iostream>
 
-using namespace std;
+#include <stack>
 
-enum Identificateurs { OPENPAR, CLOSEPAR, PLUS, MULT, INT, FIN, ERREUR };
-
-const string Etiquettes[] = { "OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT", "FIN", "ERREUR" };
+class Symbole;
+class Etat;
+class Lexer;
 
 class Automate {
-   public:
-      Automate() {  }
-      virtual ~Automate() { }
-      operator int() const { return ; }
-      virtual void decalage(Symbole * s, Etat * e);
+public:
+    void decalage(Symbole* s, Etat* e);
+    void transitionsimple(Symbole* s, Etat* e);
+    void reduction(int n, Symbole* s);
 
-   protected:
+private:
+    std::stack<Symbole*> symbolstack;
+    std::stack<Etat*>    statestack;
+    Lexer* lexer = nullptr;
 };
-
-
