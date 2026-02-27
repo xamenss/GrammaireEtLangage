@@ -1,10 +1,10 @@
-
 #include "symbole.h"
-
 
 class Expr : public Symbole {
     public:
-        Expr() : Symbole(EXPR) {};
+        Expr(int v) : Symbole(EXPR), valeur(v) {};
         virtual ~Expr() {};
-        virtual double eval() = 0; 
+    protected:
+        int valeur;
+        
 };

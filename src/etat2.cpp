@@ -13,9 +13,9 @@
 #include "automate.h"
 #include <iostream>
 
-// enum Identificateurs { OPENPAR, CLOSEPAR, PLUS, MULT, INT, FIN, ERREUR };
+// enum Identificateurs { OPENPAR, CLOSEPAR, PLUS, MULT, INT, FIN, EXPR };
 
-// const string Etiquettes[] = { "OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT", "FIN", "ERREUR" };
+// const string Etiquettes[] = { "OPENPAR", "CLOSEPAR", "PLUS", "MULT", "INT", "FIN", "EXPR" };
 
 Etat2::Etat2(string name) : name(name) {
 }
@@ -28,8 +28,8 @@ bool Etat2::transition(Automate & automate, Symbole * s) {
    case OPENPAR:
       automate.decalage(s, new Etat2);
       break;
-   case EXPR:
-      automate.transitionsimple(s, new Etat6);
+   case ERREUR:
+      //automate.decalage(s, new Etat6);
       break;
    default:
       cout<<"Erreur de syntaxe"<<endl;

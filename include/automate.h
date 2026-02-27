@@ -3,6 +3,7 @@
 #include "symbole.h"
 #include "etat.h"
 #include <iostream>
+#include "expr.h"
 
 #include <stack>
 
@@ -17,6 +18,10 @@ public:
     void transitionsimple(Symbole* s, Etat* e);
     void reduction(int n, Symbole* s);
     bool analyse();
+    Symbole* popSymbol();
+    Symbole * popAndDestroySymbol();
+
+    
 
 private:
     std::stack<Symbole*> symbolstack;

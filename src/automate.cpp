@@ -29,3 +29,22 @@ bool Automate::analyse() {
         statestack.top()->transition(*this, lexer->Consulter());
     }
 }
+
+Symbole * Automate::popSymbol() {
+    if (symbolstack.empty()) {
+        return nullptr;
+    }
+    Symbole* s = symbolstack.top();
+    symbolstack.pop();
+    return s;
+}
+
+Symbole * Automate::popAndDestroySymbol() {
+    if (symbolstack.empty()) {
+        return nullptr;
+    }
+    Symbole* s = symbolstack.top();
+    symbolstack.pop();
+    delete s;
+    return nullptr;
+}
