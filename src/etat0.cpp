@@ -21,6 +21,7 @@ Etat0::Etat0(string name) : name(name) {
 }
 
 bool Etat0::transition(Automate & automate, Symbole * s) {
+   cout<<"Etat0"<<endl;
    switch (*s){
    case INT: {
       automate.decalage(s, new Etat3);
@@ -35,7 +36,7 @@ bool Etat0::transition(Automate & automate, Symbole * s) {
       break;
    }
    default: {
-      cout<<"Erreur de syntaxe"<<endl;
+      cout<<"Erreur de syntaxe0"<<endl;
       automate.erreur_();
       break;
    }

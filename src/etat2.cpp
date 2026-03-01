@@ -21,6 +21,8 @@ Etat2::Etat2(string name) : name(name) {
 }
 
 bool Etat2::transition(Automate & automate, Symbole * s) {
+   cout<<"Etat2"<<endl;
+   cout<<"2:" << s->getEtiquette()<<endl;
    switch (*s){
    case INT: {
       automate.decalage(s, new Etat3);
@@ -30,12 +32,12 @@ bool Etat2::transition(Automate & automate, Symbole * s) {
       automate.decalage(s, new Etat2);
       break;
    }
-   case ERREUR: {
-      //automate.decalage(s, new Etat6);
+   case EXPR: {
+      automate.transitionsimple(s, new Etat6);
       break;
    }
    default: {
-      cout<<"Erreur de syntaxe"<<endl;
+      cout<<"Erreur de syntaxe2"<<endl;
       automate.erreur_();
       break;
    }

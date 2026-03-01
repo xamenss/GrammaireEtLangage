@@ -37,7 +37,10 @@ bool Automate::analyse() {
     bool finnn = false;
     while (!finnn && !erreur) {
         finnn = statestack.top()->transition(*this, lexer->Consulter());
+        
     }
+    Expr * e = (Expr *)symbolstack.top();
+    cout << e->getValeur() << endl;
     return false;
 }
 
