@@ -5,13 +5,21 @@
 
 int main(void) {
 
-   // string chaine("*123");
-   // Lexer l(chaine);
+   //main
+   string chaine("*123");
+   Lexer l(chaine);
 
-   // Automate a(&l);
-   // a.analyse();
-   // return 0;
-   TestCase::runTestsFailed();
-   return TestCase::runTestsPassed();
+   Automate a(&l);
+   a.analyse();
+   return 0;
+
+   //main
+
+   // Test unitaire
+
+   // TestCase::runTestsFailed();
+   // return TestCase::runTestsPassed();
+
+   // Test unitaire
 }
 
