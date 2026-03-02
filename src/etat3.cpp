@@ -21,8 +21,8 @@
 // }
 
 bool Etat3::transition(Automate & automate, Symbole * s) {
-   cout<<"Etat3:"<<endl;
-   cout<<"sa:" << s->getEtiquette()<<endl;
+   // cout<<"Etat3:"<<endl;
+   // cout<<"sa:" << s->getEtiquette()<<endl;
    switch (*s){
       
    case PLUS: {

@@ -22,6 +22,11 @@ class Symbole;
 class Etat;
 class Lexer;
 
+struct AnalyseResult {
+    bool success;
+    int value;
+};
+
 class Automate {
 public:
 Automate(Lexer* l) : lexer(l) {statestack.push(new Etat0);}
@@ -30,7 +35,7 @@ Automate(Lexer* l) : lexer(l) {statestack.push(new Etat0);}
     void reduction(int n, Symbole* s);
     void fin_();
     void erreur_();
-    bool analyse();
+    AnalyseResult  analyse();
     Symbole* popSymbol();
     Symbole * popAndDestroySymbol();
 
@@ -42,4 +47,5 @@ private:
     Lexer* lexer = nullptr;
     bool fin = false;
     bool erreur = false;
+    int value = 0;
 };

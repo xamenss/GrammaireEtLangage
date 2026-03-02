@@ -23,7 +23,7 @@ Etat6::Etat6(string name) : name(name) {
 }
 
 bool Etat6::transition(Automate & automate, Symbole * s) {
-   cout<<"Etat6"<<endl;
+   // cout<<"Etat6"<<endl;
    switch (*s){
    case PLUS: {
       automate.decalage(s, new Etat4);

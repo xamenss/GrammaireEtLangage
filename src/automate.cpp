@@ -30,18 +30,30 @@ void Automate::fin_() {
 
 void Automate::erreur_() {
     erreur = true;
+    value = -1;
 }
 
 
-bool Automate::analyse() {
+AnalyseResult  Automate::analyse() {
     bool finnn = false;
     while (!finnn && !erreur) {
         finnn = statestack.top()->transition(*this, lexer->Consulter());
+        // cout << "erre"<< erreur << endl;
+    }
+    
+    
+    if (erreur) {
+        cout << "Expression incorrecte" << endl;
         
     }
-    Expr * e = (Expr *)symbolstack.top();
+    else {
+        Expr * e = (Expr *)symbolstack.top();
     cout << e->getValeur() << endl;
-    return false;
+        cout << "Expression correcte, valeur = " << e->getValeur() << endl;
+        value = e->getValeur();
+    }
+    
+    return {!erreur && finnn, value};
 }
 
 Symbole * Automate::popSymbol() {

@@ -1,15 +1,17 @@
 #include <iostream>
 #include "lexer.h"
 #include "automate.h"
+#include "TestCase.h"
 
 int main(void) {
-   string chaine("(1+34)*123");
 
-   Lexer l(chaine);
- 
-   Automate automate(&l);
-   automate.analyse();
+   // string chaine("*123");
+   // Lexer l(chaine);
 
-   return 0;
+   // Automate a(&l);
+   // a.analyse();
+   // return 0;
+   TestCase::runTestsFailed();
+   return TestCase::runTestsPassed();
 }
 

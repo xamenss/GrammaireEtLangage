@@ -21,7 +21,7 @@
 // }
 
 bool Etat0::transition(Automate & automate, Symbole * s) {
-   cout<<"Etat0"<<endl;
+   // cout<<"Etat0"<<endl;
    switch (*s){
    case INT: {
       automate.decalage(s, new Etat3);
