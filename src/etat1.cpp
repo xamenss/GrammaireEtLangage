@@ -21,6 +21,8 @@
 // }
 
 bool Etat1::transition(Automate & automate, Symbole * s) {
+   cout<<"Etat1"<<endl;
+   cout<<"sa:" << s->getEtiquette()<<endl;
    switch (*s){
    case PLUS: {
       automate.decalage(s, new Etat4);
@@ -31,6 +33,7 @@ bool Etat1::transition(Automate & automate, Symbole * s) {
       break;
    }
    case FIN: {
+      cout<<"Expression correcte" << endl;
       automate.fin_();
       return true;
       break;

@@ -21,33 +21,42 @@
 // }
 
 bool Etat3::transition(Automate & automate, Symbole * s) {
+   cout<<"Etat3:"<<endl;
+   cout<<"sa:" << s->getEtiquette()<<endl;
    switch (*s){
+      
    case PLUS: {
       Symbole * s1 =  automate.popSymbol();
       int valeur =((Entier*) s1)->getValeur();
-      automate.reduction(1, s1);
+      cout << valeur << endl;
+      Expr * s3 = new Expr(valeur);
+      automate.reduction(1, s3);
       break;
    }
    case MULT: {
       Symbole * s1 =  automate.popSymbol();
       int valeur =((Entier*) s1)->getValeur();
-      automate.reduction(1, s1);
+       cout << valeur << endl;
+      Expr * s3 = new Expr(valeur);
+      automate.reduction(1, s3);
       break;
    }
    case CLOSEPAR: {
       Symbole * s1 =  automate.popSymbol();
       int valeur =((Entier*) s1)->getValeur();
-      automate.reduction(1, s1);
+      Expr * s3 = new Expr(valeur);
+      automate.reduction(1, s3);
       break;
    }
    case FIN: {
       Symbole * s1 =  automate.popSymbol();
       int valeur =((Entier*) s1)->getValeur();
-      automate.reduction(1, s1);
+      Expr * s3 = new Expr(valeur);
+      automate.reduction(1, s3);
       break;
    }
    default: {
-      cout<<"Erreur de syntaxe"<<endl;
+      cout<<"Erreur de syntaxe3"<<endl;
       automate.erreur_();
       break;
    }

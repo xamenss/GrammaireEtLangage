@@ -12,7 +12,7 @@ class Etat7 : public Etat {
    public:
    Etat7(string name);
    Etat7(){};
-   virtual ~Etat7();
+   ~Etat7(){};
    void print() const;
    bool transition(Automate & automate, Symbole * s);
    protected:

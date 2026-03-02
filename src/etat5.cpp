@@ -21,9 +21,10 @@ Etat5::Etat5(string name) : name(name) {
 }
 
 bool Etat5::transition(Automate & automate, Symbole * s) {
+   cout<<"Etat5"<<endl;
    switch (*s){
    case INT: {
-      automate.decalage(s, new Etat5);
+      automate.decalage(s, new Etat3);
       break;
    }
    case OPENPAR: {
@@ -35,7 +36,7 @@ bool Etat5::transition(Automate & automate, Symbole * s) {
       break;
    }
    default: {
-      cout<<"Erreur de syntaxe"<<endl;
+      cout<<"Erreur de syntaxe5"<<endl;
       automate.erreur_();
       break;
    }

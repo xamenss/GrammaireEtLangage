@@ -21,6 +21,7 @@ Etat8::Etat8(string name) : name(name) {
 }
 
 bool Etat8::transition(Automate & automate, Symbole * s) {
+   cout<<"Etat8"<<endl;
    switch (*s){
    case PLUS: {
       Expr * s1 = (Expr*) automate.popSymbol();
@@ -59,7 +60,7 @@ bool Etat8::transition(Automate & automate, Symbole * s) {
       break;
    }
    default: {
-      cout<<"Erreur de syntaxe"<<endl;
+      cout<<"Erreur de syntaxe8"<<endl;
       automate.erreur_();
       break;
    }

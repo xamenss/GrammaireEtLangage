@@ -21,6 +21,7 @@ Etat9::Etat9(string name) : name(name) {
 }
 
 bool Etat9::transition(Automate & automate, Symbole * s) {
+   cout<<"Etat9"<<endl;
    switch (*s){
    case PLUS: {
       automate.popAndDestroySymbol();
@@ -59,7 +60,7 @@ bool Etat9::transition(Automate & automate, Symbole * s) {
       break;
    }
    default: {
-      cout<<"Erreur de syntaxe"<<endl;
+      cout<<"Erreur de syntaxe9"<<endl;
       automate.erreur_();
       break;
    }

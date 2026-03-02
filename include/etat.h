@@ -12,7 +12,7 @@ class Etat {
    Etat(string name);
    Etat() = default;
    virtual ~Etat() = default;
-   void print() const;
+   void print() const{};
    virtual bool transition(Automate & automate, Symbole * s) = 0;
    protected:
    string name;
